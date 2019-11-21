@@ -80,6 +80,8 @@ void setPin(String pinArrange, unsigned char v1_HL,unsigned char v2_HL,unsigned 
 
 
 void HandOver4dBstep(int sleepTime){
+  
+  //up down
   setPin("p13p8andp0p5",0,0,0,0,0,0); // 0,32dB 
   delay(sleepTime);  
   setPin("p13p8andp0p5",0,0,0,1,0,0); //4,28dB
@@ -98,6 +100,25 @@ void HandOver4dBstep(int sleepTime){
   delay(sleepTime);
   setPin("p13p8andp0p5",1,1,1,1,1,1); //32,0dB  
   delay(sleepTime);
+
+  //down up
+  setPin("p13p8andp0p5",0,0,0,1,1,1); //28,4dB
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,0,1,1); //24,8dB  
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,1,0,1); //20,12dB 
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,0,0,1); //16,16dB
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,1,1,0); //12,20dB
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,0,1,0); //8,24dB
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,1,0,0); //4,28dB
+  delay(sleepTime);
+  setPin("p13p8andp0p5",0,0,0,0,0,0); // 0,32dB 
+  delay(sleepTime);  
+  
 }
 
 
